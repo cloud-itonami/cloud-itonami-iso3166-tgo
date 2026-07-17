@@ -1,0 +1,14 @@
+;; data/culture-tx.edn — DataScript tx-data derived from src/culture/facts.cljc
+;; `culture.facts/catalog` (ADR-2607171400 addendum 2, Wave 1 country-level).
+;; Same shape across every cloud-itonami-iso3166-* sibling. Do not hand-edit;
+;; regenerate from the catalog.
+
+[
+#:culture{:id "tgo.dish.fufu", :name "Fufu", :country "TGO", :kind :dish, :summary "Togolese staple made from peeled and boiled yams pounded with a pestle until reaching a dough consistency.", :url "https://en.wikipedia.org/wiki/Togolese_cuisine", :url-provenance :wikipedia-en, :retrieved-at "2026-07-17"}
+#:culture{:id "tgo.dish.akpan", :name "Akpan", :country "TGO", :kind :dish, :summary "Togolese fermented maize dessert, steamed in banana leaves.", :url "https://en.wikipedia.org/wiki/Togolese_cuisine", :url-provenance :wikipedia-en, :retrieved-at "2026-07-17"}
+#:culture{:id "tgo.dish.koklo-meme", :name "Koklo meme", :country "TGO", :kind :dish, :summary "Togolese dish of grilled chicken with chili sauce.", :url "https://en.wikipedia.org/wiki/Togolese_cuisine", :url-provenance :wikipedia-en, :retrieved-at "2026-07-17"}
+#:culture{:id "tgo.beverage.sodabi", :name "Sodabi", :country "TGO", :kind :beverage, :summary "Homemade alcohol obtained by distilling palm wine, holding an important place in daily life and religious practices in Togo and Benin.", :url "https://en.wikipedia.org/wiki/Sodabi", :url-provenance :wikipedia-en, :retrieved-at "2026-07-17"}
+#:culture{:id "tgo.festival.evala", :name "Evala", :country "TGO", :kind :festival, :summary "Traditional wrestling practised mainly by the Kabyé of northern Togo, the penultimate element of a young men's initiation rite into adulthood.", :url "https://en.wikipedia.org/wiki/Kabye_people", :url-provenance :wikipedia-en, :retrieved-at "2026-07-17"}
+#:culture{:url "https://en.wikipedia.org/wiki/Koutammakou", :id "tgo.heritage.koutammakou", :kind :heritage, :name-local "Land of the Batammariba", :country "TGO", :retrieved-at "2026-07-17", :summary "Cultural landscape on the border between northern Togo and Benin, featuring traditional mud tower-houses (Takienta); designated a UNESCO World Heritage Site in 2004 and expanded in 2023.", :name "Koutammakou", :url-provenance :wikipedia-en}
+#:culture{:id "tgo.heritage.akodessawa-fetish-market", :name "Akodessawa Fetish Market", :country "TGO", :kind :heritage, :summary "Market in Lomé, Togo, described as the world's largest voodoo market, selling items used in vodún religious practices.", :url "https://en.wikipedia.org/wiki/Akodessawa_Fetish_Market", :url-provenance :wikipedia-en, :retrieved-at "2026-07-17"}
+]
