@@ -2,10 +2,46 @@
 
 **TGO**: Togolese Republic.
 
-- ARMP e-procurement
+- ARCOP e-procurement (arcop.tg, formerly branded ARMP)
 - RCCM + NIF
 
 AGPL-3.0-or-later.
+
+## Market-entry / statute catalogs
+
+Governed public-sector market-entry compliance actor, same architecture
+as `cloud-itonami-iso3166-ben`/`-ner`/`-bfa` (fellow UEMOA + OHADA
+member states):
+
+- `src/marketentry/{facts,governor,phase,sim,operation,registry,store,
+  marketentryllm}.cljc` -- the actor. `facts.cljc` cites the Autorité de
+  Régulation de la Commande Publique (ARCOP, Loi n°2021-033 du 31
+  décembre 2021), the Direction Nationale de Contrôle de la Commande
+  Publique (DNCCP), RCCM (OHADA's Acte Uniforme relatif au Droit
+  Commercial Général, adopted in Lomé itself) and NIF (Numéro
+  d'Identification Fiscale, Office Togolais des Recettes -- OTR),
+  all bundled into ONE 'carte unique de création d'entreprise' by the
+  Centre de Formalités des Entreprises (CFE Togo). `governor.cljc`'s
+  flagship check independently verifies that a market an engagement
+  declares reserved for jeunes/femmes entrepreneurs was actually run
+  through one of Décret n°2018-028/PR Art. 2's two permitted simplified
+  procedures (demande de cotation / appel d'offres restreint avec
+  publicité) -- a categorical procedure-type eligibility gate, a
+  genuinely new check shape for this family (not a price recompute or a
+  sanction-range check).
+- `src/statute/facts.cljc` -- general-law catalog: the OHADA Uniform Act
+  on Commercial Companies (AUSCGIE, directly applicable), the Code des
+  Investissements (Loi n°2019-005 du 17 juin 2019, creates the API-ZF
+  investment-promotion guichet unique), and the Office Togolais des
+  Recettes' own creation law (Loi n°2012-016 du 14 décembre 2012). A
+  Labour Code / personal-data-protection law was investigated and
+  honestly NOT found with a confirmed citation this session -- see the
+  namespace docstring's coverage note.
+
+Every citation is WebFetch/curl-verified against an official source
+(arcop.tg, ohada.org, uemoa.int, otr.tg, cfetogo.tg, jo.gouv.tg,
+investmentpolicy.unctad.org); see each namespace's docstring for the
+full research trail and any honestly-narrowed scope or disclosed gap.
 
 ## Culture catalog
 
