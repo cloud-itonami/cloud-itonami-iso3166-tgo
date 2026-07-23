@@ -1,0 +1,38 @@
+(ns marketentry.facts-test
+  (:require [clojure.test :refer [deftest is testing]]
+            [marketentry.facts :as facts]))
+
+(deftest tgo-has-spec-basis
+  (let [sb (facts/spec-basis "TGO")]
+    (is (some? sb))
+    (is (string? (:provenance sb)))
+    (is (seq (:required-evidence sb)))
+    (is (some? (facts/corporate-number-spec-basis "TGO")))
+    (is (some? (facts/business-registration-spec-basis "TGO")))
+    (is (some? (facts/youth-women-quota-spec-basis "TGO")))))
+
+(deftest tgo-rep-spec-basis-is-honestly-absent
+  (testing "Togo's rep/dirigeant exclusion-extension provision (Loi n°2021-034 Art. 29) lives in the PPP-contract law, not the general procurement law this catalog is grounded in -- deliberately not claimed"
+    (is (nil? (facts/rep-spec-basis "TGO")))))
+
+(deftest unknown-jurisdiction-has-no-spec-basis
+  (is (nil? (facts/spec-basis "ATL")))
+  (is (nil? (facts/spec-basis "ZZZ"))))
+
+(deftest required-evidence-satisfied
+  (let [sb (facts/spec-basis "TGO")
+        all (:required-evidence sb)]
+    (is (true? (facts/required-evidence-satisfied? "TGO" all)))
+    (is (not (facts/required-evidence-satisfied? "TGO" (take 1 all))))
+    (is (nil? (facts/required-evidence-satisfied? "ATL" all)))))
+
+(deftest coverage-is-honest
+  (let [c (facts/coverage ["TGO" "USA" "ATL"])]
+    (is (= 3 (:requested c)))
+    (is (= 2 (:covered c)))
+    (is (= ["ATL"] (:missing-jurisdictions c)))))
+
+(deftest youth-women-quota-permitted-procedures-are-the-two-named-in-article-2
+  (let [sb (facts/youth-women-quota-spec-basis "TGO")]
+    (is (= #{:demande-de-cotation :appel-offres-restreint-avec-publicite}
+           (:youth-women-quota-permitted-procedures sb)))))
