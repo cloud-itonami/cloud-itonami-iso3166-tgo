@@ -29,7 +29,7 @@ member states):
   publicité) -- a categorical procedure-type eligibility gate, a
   genuinely new check shape for this family (not a price recompute or a
   sanction-range check).
-- `src/statute/facts.cljc` -- general-law catalog: the OHADA Uniform Act
+- `src/statute/facts.cljk` -- general-law catalog: the OHADA Uniform Act
   on Commercial Companies (AUSCGIE, directly applicable), the Code des
   Investissements (Loi n°2019-005 du 17 juin 2019, creates the API-ZF
   investment-promotion guichet unique), and the Office Togolais des
@@ -51,7 +51,7 @@ Alongside the market-entry / statute catalogs, this repo carries a
 `com-junkawasaki/root`) — national dishes, protected products, beverages,
 crafts, festivals and heritage sites for Togo:
 
-- `src/culture/facts.cljc` — the catalog, source of truth (keyed by
+- `src/culture/facts.cljk` — the catalog, source of truth (keyed by
   uppercase ISO3, mirroring `statute.facts`).
 - `schema/culture.edn` — DataScript schema.
 - `data/culture-tx.edn` — derived DataScript tx-data (regenerated from
